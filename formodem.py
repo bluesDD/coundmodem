@@ -11,9 +11,17 @@ today2= "{0:%Y%m%d}".format(today1)
 logfile_name_log = today2 + "_howmany.log"
 logfile_name_csv = today2 + "_howmany.csv"
 
+#ログファイルとCSVファイルを開く
 fr = open(logfile_name_log)
 fw = open(logfile_name_csv, 'w')
 line = fr.readline()
+
+#fline = line.split(",")
+
+while line:
+    
+    fw.write(line)
+    line = fr.readline()
 
 """
 while line:
@@ -22,5 +30,6 @@ while line:
     line = fr.readline()
 """
 
+#開いた両ファイルを閉じる
 fr.close()
 fw.close()
